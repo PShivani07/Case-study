@@ -1,0 +1,30 @@
+'''
+The program below finds a six digit number n, in which the last 4 digits were palindromic.
+On adding one to n, the last 5 numbers were palindromic
+on adding again one to n,the middle 4 out of 6 numbers were palindromic
+Again adding one,all 6 were palindromic.
+What is the value of n initially?
+'''
+
+def palindrome(word):
+    if word[:] == word[::-1]:
+        return True
+    return False
+
+no=100000
+
+while no<999999:
+    num=str(no)
+    num1=str(no)
+    if palindrome(num[2:]):
+        no=no+1
+        num=str(no)
+        if palindrome(num[1:]):
+            no=no+1
+            num=str(no)
+            if palindrome(num[1:5]):
+                no=no+1
+                num=str(no)
+                if palindrome(num):
+                    print(num1)
+    no=int(num1)+1
