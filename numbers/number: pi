@@ -1,0 +1,15 @@
+from decimal import *
+
+def places(n):
+  getcontext().prec = n
+
+  pi=Decimal(22)/Decimal(7)
+  print(pi)
+
+print("Enter the number of decimal places in the value of pi to be printed......not more than 1000:")
+n=int(input())+1
+
+if n > 1000:
+  print("Number exceeded!!!")
+else:
+  places(n)
