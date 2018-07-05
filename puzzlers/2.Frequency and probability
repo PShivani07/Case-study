@@ -1,0 +1,38 @@
+'''
+given a string choose a random value from the string and print its probability in proportion to frequency
+'''
+import random
+
+def choose_from_hist(e):
+    l,f=make_list(e)
+    sum=0
+    for i in l:
+        sum+=i
+    d=random.choice(f)
+    print(d)
+    if d in e:
+        print(e[d],"/",sum)
+
+def make_list(e):
+    l=[]
+    f=[]
+    for i in e:
+        l.append(e[i])
+        f.append(i)
+    return l,f
+
+def histogram(e):
+    d={}
+    for i in e:
+        if i in d:
+            d[i]+=1
+        else:
+            d[i]=1
+    return d
+
+t=input("enter a string:")
+e=list(t)
+print(e)
+hist=histogram(e)
+print(hist)
+choose_from_hist(hist)
